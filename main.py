@@ -82,7 +82,7 @@ def main():
     bootstrap_servers = ['192.168.1.16:9093']
     topic_query = "query"
     topic_profiles = "profiles"
-    
+
     api_url = 'http://127.0.0.1:8000/v1/profile'
     debug = False
     
