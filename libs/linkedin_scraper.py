@@ -8,10 +8,15 @@ import time
 import re
 import json
 import os
-import string
-import random
+
 # from libs.settings import CONFIG
-from libs.utils import load_data_from_json, save_data_to_json, add_cookies, add_local_storage, wait_for_element
+from libs.utils import (load_data_from_json,
+                   save_data_to_json, 
+                   add_cookies, 
+                   add_local_storage, 
+                   wait_for_element, 
+                   generate_linkedin_search_url, 
+                   generate_random_string)
 
 from typing import List
 
@@ -139,33 +144,27 @@ class LinkedInScraper:
                     data.append(json_data)
         return data
 
-    def search_and_extract(self, pattern, page_start, page_end, debug:bool = False)-> List[dict]:
+    def search_and_extract(self, debug:bool = False, **kwargs: dict) -> List[dict]:
         
         data = []
         
         if debug:
             data = LinkedInScraper.load_json_files(self.folders[0])
         else:
+            page_start = kwargs.get('page_start', 1)
+            page_end = kwargs.get('page_end', 5)
             
             for page in range(page_start, page_end + 1):
                 
-                def generate_random_string():
-                    """
-                    Generates a random string of 3 letters.
-                    
-                    Returns:
-                        str: A random string of 3 letters.
-                    """
-                    letters = string.ascii_letters  # Get all letters (uppercase and lowercase)
-                    random_string = ''.join(random.choices(letters, k=3))
-                    return random_string
-
-                randomseed = generate_random_string()
+                # Example usage
+                geo_urns = kwargs.get('geo_urns', ["104379274"])
+                industries = kwargs.get('industries', ["2358","14","4","43"])
+                keywords = kwargs.get('keywords', "c# developer")
+                profile_language = kwargs.get('profile_language', ["es"])
+            
+                sid = kwargs.get('sid', generate_random_string())
                 
-                pattern = pattern.replace(' ', '%20')
-                pattern = pattern.replace("#", "%23")
-                
-                search_url = f"https://www.linkedin.com/search/results/people/?keywords={pattern}&origin=GLOBAL_SEARCH_HEADER&page={page}&sid={randomseed}"
+                search_url = generate_linkedin_search_url(geo_urns, industries, keywords, profile_language, page, sid)
                 print("search url")
                 print(search_url)
                 self.driver.get(search_url)
@@ -179,10 +178,12 @@ class LinkedInScraper:
                 
                 # Extract information from the page
                 profiles = self.extract_information(li_elements, page)
-
+                profiles['search_url'] = search_url
+                
                 # Save data
                 if self.save_json:
-                    self.save_extracted_data(profiles, page)
+                    self.save_extracted_data(profiles, page )
+
                 data.append(profiles)
             
         print("Done!")
@@ -204,7 +205,8 @@ class LinkedInScraper:
                 'location': '',
                 'connection': '',
                 'services': '',
-                'profile_url': ''  # Added field for the profile URL
+                'profile_url': '',  # Added field for the profile URL
+                'search_url': ''  # Added field for the search URL
             }
             
             # Extract the name
@@ -300,26 +302,50 @@ class LinkedInScraper:
                 
     def run(self, username: str, password: str, search_pattern: str, page_start:int , page_end:int):
         self.login(username=username, password=password)
-        self.search_and_extract(search_pattern, page_start, page_end)
+        # self.search_and_extract(search_pattern, page_start, page_end)
         
         # Load some profile 
         # profile_test = "https://www.linkedin.com/in/fernando-terrazas-79abab5/"
         # self.send_connection_request(profile_test)
 
-        time.sleep(20)
-        self.driver.quit()
+        #time.sleep(20)
+        #self.driver.quit()
 
 def main():
     scraper = LinkedInScraper()
     
-    username = ""# CONFIG['username']
-    password = ""#CONFIG['password']
-    
-    search_pattern = "c# developer"
+    username = "stanlee321@gmail.com"
+    password = "2.002319304Momm"
+        
+    # Example usage
+    geo_urns = ["104379274"]
+    industries = ["2358","14","4","43"]
+    keywords = "c# developer"
+    profile_language = ["es"]
+    sid = generate_random_string()
+
     page_start = 1
     page_end = 4
 
-    scraper.run(username, password, search_pattern, page_start, page_end)
+    scraper.run(username, password, keywords, page_start, page_end)
+    kwargs = {
+        page_start: page_start,
+        page_end: page_end,
+        geo_urns: geo_urns,
+        industries: industries,
+        keywords: keywords,
+        profile_language: profile_language,
+        sid: sid 
+    }
+    
+    scraper.search_and_extract(**kwargs, debug=True)
+    
+    # Load some profile 
+    # profile_test = "https://www.linkedin.com/in/fernando-terrazas-79abab5/"
+    # self.send_connection_request(profile_test)
+
+    time.sleep(20)
+    scraper.driver.quit()
     
     print("Done! Check the output folder for the extracted data.")
 

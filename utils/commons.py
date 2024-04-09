@@ -13,12 +13,11 @@ def generate_uuid():
 
 
 
-def transform_data(data: Any, page: int) -> dict:
+def transform_data(data: Any, page: int, search_url: str) -> dict:
     
     new_data = {
-            "message_sent": False,
-            "message": None,
             "page": page,
+            "search_url": search_url,
             "status": "active",
             "uuid":  generate_uuid()
         }

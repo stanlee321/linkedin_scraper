@@ -4,7 +4,7 @@ from data_source.kafka import KafkaHandler
 from utils.commons import transform_data
 from utils.api import make_post_request
 
-from typing import List
+from typing import List, Union
 
 
 class ScraperHandler:
@@ -41,34 +41,59 @@ class ScraperHandler:
         producer.send(self.topic, value=data)
         producer.flush()
         print("Message produced to Kafka topic:", self.topic)
+        
+    def create_payload(self, data: dict) -> Union[dict, None]:
+                                
+        page_start = data.get('start_at', 1)
+        page_end = data.get('end_at', 5)
+        geo_urns = data.get('geo_urns', ["104379274"])
+        industries = data.get('industries', ["2358","14","4","43"])
+        profile_language = data.get('profile_language', ['es'])
+        keywords = data.get('search_pattern', '')
 
-    def consume(self, producer: KafkaProducer , consumer: KafkaConsumer, ):
+        if keywords == '' or keywords is None:
+            return None
+                
+        kwargs = {
+            'page_start': page_start,
+            'page_end': page_end,
+            'geo_urns': geo_urns,
+            'industries': industries,
+            'keywords': keywords,
+            'profile_language': profile_language
+        }
+        
+        return kwargs
+            
+    def consume(self, producer: KafkaProducer, consumer: KafkaConsumer, ):
 
         # Consume messages
         for message in consumer:
             print("Consumed message from Kafka topic:", message.value)
             
-            data = message.value
-            search_pattern = data['search_pattern']
-            page_start = data['start_at']
-            page_end = data['end_at']
-            
+            data: dict = message.value
+            kwargs = self.create_payload(data)
+            if kwargs is None:
+                print("Invalid data")
+                continue
+
             # Instrction : SCRAP
-            output_data_list = self.lkdn_handler.search_and_extract(search_pattern, page_start, page_end, debug=self.debug)
+            output_data_list = self.lkdn_handler.search_and_extract(**kwargs, debug=self.debug)
             
             for i, data in enumerate(output_data_list):
+                
                 page  = data['page']
+                search_url = data['search_url']
+                
                 for profile in data['data']:
-                    if not(profile['name'] == '' or profile['profile_url']  == ''):
-                        clean_data = transform_data(profile, page)
-                        producer.send(self.topic_data, value=clean_data)     
-                        producer.flush()
+                    if profile['profile_url']  != '':
+                        clean_data = transform_data(profile, page, search_url)
+                        # producer.send(self.topic_data, value=clean_data)     
+                        # producer.flush()
                         
                         # Send to API
                         make_post_request(url=self.api_url, data=clean_data, headers=None)
                         
-                        
-
     def run(self):
         print("runnning...")
         producer: KafkaProducer = self.kafka_handler.get_producer()
