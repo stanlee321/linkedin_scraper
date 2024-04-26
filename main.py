@@ -3,8 +3,17 @@ from kafka import KafkaProducer, KafkaConsumer
 from data_source.kafka import KafkaHandler
 from utils.commons import transform_data
 from utils.api import make_post_request
-
+import logging
+import sys
 from typing import List, Union
+
+
+# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+# logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+
+# logger = logging.getLogger('kafka')
+# logger.setLevel(logging.WARN)
+
 
 
 class ScraperHandler:
@@ -50,9 +59,6 @@ class ScraperHandler:
         industries = data.get('industries', ["2358","14","4","43"])
         profile_language = data.get('profile_language', ['es'])
         keywords = data.get('search_pattern', '')
-
-        if keywords == '' or keywords is None:
-            return None
                 
         kwargs = {
             'page_start': page_start,
@@ -71,29 +77,28 @@ class ScraperHandler:
         for message in consumer:
             print("Consumed message from Kafka topic:", message.value)
             
-            data: dict = message.value
-            kwargs = self.create_payload(data)
-            if kwargs is None:
-                print("Invalid data")
-                continue
+            data: dict = message.value 
 
-            # Instrction : SCRAP
-            output_data_list = self.lkdn_handler.search_and_extract(**kwargs, debug=self.debug)
-            
+            # output_data_list = self.lkdn_handler.search_and_extract(**kwargs, debug=self.debug)
+            output_data_list = self.lkdn_handler.extract_from_url(**data, debug=self.debug)
+            if output_data_list is None:
+                print("No data extracted")
+                continue
             for i, data in enumerate(output_data_list):
                 
                 page  = data['page']
                 search_url = data['search_url']
                 
                 for profile in data['data']:
-                    if profile['profile_url']  != '':
-                        clean_data = transform_data(profile, page, search_url)
-                        # producer.send(self.topic_data, value=clean_data)     
-                        # producer.flush()
-                        
-                        # Send to API
-                        make_post_request(url=self.api_url, data=clean_data, headers=None)
-                        
+                    clean_data = transform_data(profile, page, search_url)
+                    # producer.send(self.topic_data, value=clean_data)     
+                    # sproducer.flush()
+                    
+                    # Send to API
+                    res = make_post_request(url=self.api_url, data=clean_data, headers=None)
+                    if res is not None:
+                        print("Data sent to API OK" )
+                    
     def run(self):
         print("runnning...")
         producer: KafkaProducer = self.kafka_handler.get_producer()
@@ -104,7 +109,7 @@ class ScraperHandler:
 
         
 def main():
-    bootstrap_servers = ['192.168.1.16:9093']
+    bootstrap_servers = ['192.168.1.9:9093']
     topic_query = "query"
     topic_profiles = "profiles"
 

@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.remote.remote_connection import LOGGER
+import logging
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
@@ -8,6 +10,8 @@ import time
 import re
 import json
 import os
+
+LOGGER.setLevel(logging.WARNING)
 
 # from libs.settings import CONFIG
 from libs.utils import (load_data_from_json,
@@ -18,7 +22,7 @@ from libs.utils import (load_data_from_json,
                    generate_linkedin_search_url, 
                    generate_random_string)
 
-from typing import List
+from typing import List, Union
 
 class LinkedInScraper:
     def __init__(self, save_json=True,):
@@ -47,6 +51,7 @@ class LinkedInScraper:
         options.page_load_strategy = 'eager'
         options.add_argument(f"user-agent={self.user_agent}")
         options.add_experimental_option("detach", True)
+
         return webdriver.Edge(options=options)
 
     def load_cookies_and_local_storage(self):
@@ -83,19 +88,19 @@ class LinkedInScraper:
 
 
 
-    def extract_data(self, driver : webdriver.Edge, el: int) -> list:
+    def extract_data(self, driver : webdriver.Edge, fullpath: str) -> List:
         html_content = driver.page_source
         soup = BeautifulSoup(html_content, "html.parser")
+        
         # If all is ok, get the HTML data from the page from the full XPATH using BS4
 
-        def get_url(el):
-            fullpath = f'html > body > div:nth-of-type({el}) > div:nth-of-type(3) > div:nth-of-type(2) > div > div:first-of-type > main'
-            return fullpath
-        
-        fullpath = get_url(el)
         element = soup.select_one(fullpath)
         if element is None:
-            print(f"Element with full path '{fullpath}' not found")
+            print(f"Element not found  with full path: \n '{fullpath}'  \n with url: \n {driver.current_url}")
+            # Save the HTML content to a file for 
+            some_uuid = generate_random_string()
+            with open(f"error_page_{some_uuid}.html", "w", encoding="utf-8") as file:
+                file.write(html_content)
             return []
         # New code to get all 'li' elements inside 'element'
         li_elements = element.select('li')
@@ -168,16 +173,13 @@ class LinkedInScraper:
                 print("search url")
                 print(search_url)
                 self.driver.get(search_url)
-                time.sleep(5)  # Adjust based on your connection speed
+                time.sleep(20)  # Adjust based on your connection speed
 
-                li_elements = self.extract_data(self.driver, 5)
-                if len(li_elements)  == 0:
-                    li_elements = self.extract_data(self.driver, 4)
-                    if len(li_elements) == 0:
-                        continue
-                
+                print("search url", search_url )
+                profiles = self.get_profiles(search_url, page)
+                if len(profiles) == 0:
+                    continue
                 # Extract information from the page
-                profiles = self.extract_information(li_elements, page)
                 profiles['search_url'] = search_url
                 
                 # Save data
@@ -188,7 +190,72 @@ class LinkedInScraper:
             
         print("Done!")
         return data
+
+    @staticmethod
+    def get_css_path(el):
+        fullpath = f'html > body > div:nth-of-type({el}) > div:nth-of-type(3) > div:nth-of-type(2) > div > div:first-of-type > main'
+        return fullpath
     
+    def get_profiles(self, search_url: str, page: int) -> dict:
+        
+        self.driver.get(search_url)
+        time.sleep(15)  # Adjust based on your connection speed
+        
+        
+        for el in [5, 4]:
+            
+            li_elements = []
+            fullpath = LinkedInScraper.get_css_path(el)
+            li_elements = self.extract_data(self.driver, fullpath)
+            if len(li_elements)  != 0:
+                print("[ DEBUG ] I found the element!")
+                # Extract information from the page
+                profiles = self.extract_information(li_elements, page)
+                profiles['search_url'] = search_url
+                return profiles
+
+        return {}
+    
+    def extract_from_url(self, debug:bool = False, **kwargs: dict) -> Union[List[dict], None]:
+        """ 
+        Extracts data from a given URL. If debug is True, it loads JSON files from the first folder in self.folders.
+        If debug is False, it uses the provided page_start, page_end, and search_url to extract data.
+        If search_url is not provided or empty, the function returns None.
+            Args:
+                debug (bool): If True, load JSON files from the first folder in
+                page_start: int: The starting page number.
+                page_end: int: The ending page number.
+                search_url: str: the Linkedin search url.
+                
+            Returns:
+                list: A list of dictionaries containing the extracted data.
+                
+        """
+        
+        # Placeholder for the extracted data
+        data = []
+        
+        if debug:
+            data = LinkedInScraper.load_json_files(self.folders[0])
+        else:
+            page_start = kwargs.get('start_at', 1)
+            page_end = kwargs.get('end_at', 5)
+            
+            for page in range(page_start, page_end + 1):
+                search_url = kwargs.get('search_url', "")
+                search_url = search_url + f"&page={page}"
+
+                profiles = self.get_profiles(search_url, page)
+                if len(profiles) == 0:
+                    continue
+                # Save data
+                if self.save_json:
+                    self.save_extracted_data(profiles, page )
+
+                data.append(profiles)
+        print("Done!")
+        return data
+
     def extract_information(self, li_elements : List[BeautifulSoup], page: int) -> dict:
 
         profiles = {
@@ -238,7 +305,11 @@ class LinkedInScraper:
             profile_url_tag = soup.find('a', {'class': 'app-aware-link'}, href=True)
             if profile_url_tag:
                 profile_info['profile_url'] = self.clean_profile_url(profile_url_tag['href'])
-                
+            
+            # Skip profiles without a name, role, or location
+            if profile_info["location"] == "" and profile_info["connection"]  == "" and profile_info["name"] == "":
+                continue
+            # Append the extracted information to the list of profiles
             profiles['data'].append(profile_info)
 
         return profiles
