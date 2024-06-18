@@ -1,0 +1,96 @@
+{
+    "page": 10,
+    "data": [
+        {
+            "name": "Belen Hall",
+            "role": "UX UI Designer",
+            "location": "Argentina",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/belen-hall",
+            "search_url": ""
+        },
+        {
+            "name": "Ruyter Terán",
+            "role": "User Experience Designer en Arcadia SRL",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/ruyter-teran",
+            "search_url": ""
+        },
+        {
+            "name": "Laura Zeballos",
+            "role": "UX/UI and Graphic Designer - Architect",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/laura-zeballos-22b8341a2",
+            "search_url": ""
+        },
+        {
+            "name": "Celeste Gamboa",
+            "role": "UI/UX Designer Contractor",
+            "location": "Argentina",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/celeste-gamboa-6940858",
+            "search_url": ""
+        },
+        {
+            "name": "Musarrat Jahan",
+            "role": "UI/UX Designer",
+            "location": "Bengaluru",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/musarrat-jahan-483986165",
+            "search_url": ""
+        },
+        {
+            "name": "Martina Rioja",
+            "role": "UX UI Designer | Software design | Web design",
+            "location": "Buenos Aires Province, Argentina",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/martina-rioja-949692202",
+            "search_url": ""
+        },
+        {
+            "name": "Sergio Herrera",
+            "role": "Product Designer UX/UI",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/sergio-herrera-15061433",
+            "search_url": ""
+        },
+        {
+            "name": "Melisa Anselmo",
+            "role": "UX UI Designer",
+            "location": "Argentina",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/anselmomelisa",
+            "search_url": ""
+        },
+        {
+            "name": "Marcela Llanos",
+            "role": "Frontend developer | React Js | React Native | Typescript | Redux | Node Js | UX/UI Design",
+            "location": "Cochabamba",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/marcela-llanos",
+            "search_url": ""
+        },
+        {
+            "name": "Elena Pochet",
+            "role": "UI / UX Designer - Graphic Designer",
+            "location": "Argentina",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/pochetdesign",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?keywords=ui%20ux%20designer&origin=SWITCH_SEARCH_VERTICAL&sid=Jgp&page=10"
+}

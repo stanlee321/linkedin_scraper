@@ -1,0 +1,96 @@
+{
+    "page": 5,
+    "data": [
+        {
+            "name": "Mauricio Torrez",
+            "role": ".Net(Senior)/React(Senior) Fullstack(Remote / Willing to relocate) ▸ Growth MindSet | Passionate | Responsible | Open MindSet",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/mauricio-torrezm",
+            "search_url": ""
+        },
+        {
+            "name": "Ivan Mijael Vargas Bravo",
+            "role": "Chapter Lead | .Net | C#",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/ivan-mijael-vargas-bravo-6323b5199",
+            "search_url": ""
+        },
+        {
+            "name": "Juan Jose Ojeda Arteaga",
+            "role": ".net developer",
+            "location": "Provincia Andrés Ibáñez",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/juan-jose-ojeda-arteaga-2a8a411b6",
+            "search_url": ""
+        },
+        {
+            "name": "Pablo Arias",
+            "role": "FullStack Developer | React | NodeJS | .NET",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/pablo-arias-93a20b177",
+            "search_url": ""
+        },
+        {
+            "name": "Cristian Sanabria",
+            "role": "Senior .Net/React Software Developer | Full Stack Expertise | Agile Methodologies | Growth MindSet | Passionate about Creating Scalable Solutions | Always open to new opportunities 🚀",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/cristiansanabriavillarroel",
+            "search_url": ""
+        },
+        {
+            "name": "Arnold Amorin Arteaga",
+            "role": "Full Stack Developer .Net + Angular",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/arnold-amorin",
+            "search_url": ""
+        },
+        {
+            "name": "Jose Wigner LLiully Cruz",
+            "role": "Desarrollador .NET | .NET Core y Framework | Competencias en CSS, HTML, JavaScript | Solucionador de Problemas y Apasionado por el Desarrollo",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/josewignerlliullycruz",
+            "search_url": ""
+        },
+        {
+            "name": "Efrain Espadero",
+            "role": "Software Engineer | Full Stack (Backend) Developer | C# Professional Developer | .NET Developer",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/efrain-espadero-b9085a203",
+            "search_url": ""
+        },
+        {
+            "name": "",
+            "role": "Software Engineer | .NetCore Developer | Angular Developer | Full Stack Developer | BackEnd Developer | TypeScript | Oauth2.0 | OpenID Connect",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/isaacmrodriguez",
+            "search_url": ""
+        },
+        {
+            "name": "Edith Lopez Fernandez",
+            "role": "Software Developer | Backend .NET, Javascript",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Roberto Maldonado",
+            "profile_url": "https://www.linkedin.com/in/edith-lopzzz",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/PEOPLE/?keywords=.net&origin=SWITCH_SEARCH_VERTICAL&sid=e(!&page=5"
+}

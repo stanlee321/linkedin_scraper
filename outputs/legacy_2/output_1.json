@@ -1,0 +1,96 @@
+{
+    "page": 1,
+    "data": [
+        {
+            "name": "Carlos Collazos",
+            "role": "UI/UX Designer | Design Sprint Facilitator | Sketch Ambassador",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/uxcarlos",
+            "search_url": ""
+        },
+        {
+            "name": "Jorge Montero",
+            "role": "UI/UX designer at Jalasoft",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/jorge-montero-7b713132",
+            "search_url": ""
+        },
+        {
+            "name": "Marcelo Torrez Azuga",
+            "role": "UI/UX Designer | Mobile developer | iOS | Android | Flutter",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/marcelo-torrez-azuga-49a34b135",
+            "search_url": ""
+        },
+        {
+            "name": "Mercedes La Fuente Cazón",
+            "role": "Software Engineer | UI/UX designer",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/mercedes-la-fuente-caz%C3%B3n-4483a5250",
+            "search_url": ""
+        },
+        {
+            "name": "Amilkar Dominguez",
+            "role": "Software Developer | JavaScript | Java | Angular | Spring Boot | UI/UX Designer",
+            "location": "Provincia Cercado",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/amilkar-dominguez",
+            "search_url": ""
+        },
+        {
+            "name": "Ariel Colque Herrera",
+            "role": "UX/UI Designer | Product Designer | Systems Engineer",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/ariel-colque-herrera-447b601b9",
+            "search_url": ""
+        },
+        {
+            "name": "María de los Ángeles Gallardo",
+            "role": "UI/UX Designer | Figma",
+            "location": "Cercado",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/mar%C3%ADa-de-los-angeles-gallardo-dise%C3%B1adora-ui-ux",
+            "search_url": ""
+        },
+        {
+            "name": "María Fernanda Herrera Franco",
+            "role": "UX/UI Designer | Product Designer",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/mar%C3%ADa-fernanda-herrera-franco-2aa0891b9",
+            "search_url": ""
+        },
+        {
+            "name": "Hermany Terrazas",
+            "role": "Cofunder, UI:UX designer / Dev Sr",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/hermany",
+            "search_url": ""
+        },
+        {
+            "name": "Michaell Alavedra",
+            "role": "Software Architect / Developer ─ UX / UI Designer",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/michaell-alavedra",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?keywords=ui%20ux%20designer&origin=SWITCH_SEARCH_VERTICAL&sid=Jgp&page=1"
+}

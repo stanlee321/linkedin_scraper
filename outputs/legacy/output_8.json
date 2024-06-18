@@ -1,0 +1,33 @@
+{
+    "page": 8,
+    "data": [
+        {
+            "name": "Francis Verdier",
+            "role": "Chief Technology Officer at Neuberger Berman",
+            "location": "New York, NY",
+            "connection": "• 2nd2nd degree connection",
+            "services": "",
+            "profile_url": "https://www.linkedin.com/in/francis-verdier-b0a32b",
+            "search_url": ""
+        },
+        {
+            "name": "Mira Murati",
+            "role": "CTO of OpenAI",
+            "location": "San Francisco Bay Area",
+            "connection": "• 3rd+3rd+ degree connection",
+            "services": "",
+            "profile_url": "https://www.linkedin.com/in/mira-murati-4b39a066",
+            "search_url": ""
+        },
+        {
+            "name": "Rise' Jacobs, MBA",
+            "role": "Board Member | Chief Information Officer | Chief Technology Officer | Senior IT Executive | CIO | CTO",
+            "location": "New York City Metropolitan Area",
+            "connection": "• 3rd+3rd+ degree connection",
+            "services": "CTO",
+            "profile_url": "https://www.linkedin.com/in/risejacobs",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22103644278%22%2C%22102095887%22%2C%2290000084%22%2C%2290000070%22%5D&industry=%5B%221594%22%2C%224%22%2C%2243%22%2C%2214%22%2C%222358%22%5D&keywords=CTO&origin=GLOBAL_SEARCH_HEADER&profileLanguage=%5B%22en%22%5D&sid=.%2Cv&page=8"
+}

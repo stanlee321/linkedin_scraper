@@ -1,0 +1,96 @@
+{
+    "page": 6,
+    "data": [
+        {
+            "name": "Brian Tarqui Rojas",
+            "role": "Software Developer | Full-Stack Developer | UX/UI Designer",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/tarquibrian",
+            "search_url": ""
+        },
+        {
+            "name": "Sofia Talavera",
+            "role": "Industrial Designer | Content Creator | Marketing | UX/UI",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/sofia-talavera-984a06217",
+            "search_url": ""
+        },
+        {
+            "name": "Nikole Caballero Garrido",
+            "role": "UX/UI Designer | Lic. Administración de Empresas",
+            "location": "Provincia Andrés Ibáñez",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/nikole-ccg",
+            "search_url": ""
+        },
+        {
+            "name": "Nigel Dávila Maturano",
+            "role": "UX/UI Designer | Figma | No-code",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/nisheldam",
+            "search_url": ""
+        },
+        {
+            "name": "Ayrton Otondo",
+            "role": "| Marketing Digital - UX/UI Designer |",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/ayrton-otondo-841030152",
+            "search_url": ""
+        },
+        {
+            "name": "Valentina Covarrubias Lopez",
+            "role": "UX/UI Designer - Diseñadora Industrial",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/valentina-covarrubias-lopez-b11836207",
+            "search_url": ""
+        },
+        {
+            "name": "Gustavo Alvarado Sullca",
+            "role": "Software Development Engineer | UX/UI Designer | Computer forensics",
+            "location": "Cochabamba",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/gus-alvarado",
+            "search_url": ""
+        },
+        {
+            "name": "Fabio Cespedes",
+            "role": "Ingeniero de sistemas | Project Manager | Scrum manager | Android Application Development | UX/UI Designer",
+            "location": "Pedro Domingo Murillo",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/fabio-cespedes-455636121",
+            "search_url": ""
+        },
+        {
+            "name": "Ale Richter",
+            "role": "UX/UI Designer I Graphic Designer I Art Director I Photojournalist I Sports Newspaper I Sports Skin Designer I",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/ale-richter-83b32128",
+            "search_url": ""
+        },
+        {
+            "name": "Omar Meza",
+            "role": "UI/UX Designer | Frontend Development Internship",
+            "location": "La Maná",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/omar-meza-b39182177",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?keywords=ui%20ux%20designer&origin=SWITCH_SEARCH_VERTICAL&sid=Jgp&page=6"
+}

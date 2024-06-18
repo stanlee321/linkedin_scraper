@@ -1,0 +1,33 @@
+{
+    "page": 7,
+    "data": [
+        {
+            "name": "Mark J. Barrenechea",
+            "role": "CEO & CTO at OpenText",
+            "location": "United States",
+            "connection": "• 2nd2nd degree connection",
+            "services": "CTO",
+            "profile_url": "https://www.linkedin.com/in/markbarrenechea",
+            "search_url": ""
+        },
+        {
+            "name": "Samuel Namm",
+            "role": "CTO and Co-Founder at EpertSols",
+            "location": "United States",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Alejandra López",
+            "profile_url": "https://www.linkedin.com/in/samuelnamm",
+            "search_url": ""
+        },
+        {
+            "name": "Dana Lawson",
+            "role": "CTO at Netlify",
+            "location": "Portland, Oregon Metropolitan Area",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Vitaly Baum",
+            "profile_url": "https://www.linkedin.com/in/dglawson",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22103644278%22%2C%22102095887%22%2C%2290000084%22%2C%2290000070%22%5D&industry=%5B%221594%22%2C%224%22%2C%2243%22%2C%2214%22%2C%222358%22%5D&keywords=CTO&origin=GLOBAL_SEARCH_HEADER&profileLanguage=%5B%22en%22%5D&sid=.%2Cv&page=7"
+}

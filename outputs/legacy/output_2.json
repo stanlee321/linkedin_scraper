@@ -1,0 +1,33 @@
+{
+    "page": 2,
+    "data": [
+        {
+            "name": "Parth Shah",
+            "role": "CTO",
+            "location": "Gainesville, FL",
+            "connection": "• 2nd2nd degree connection",
+            "services": "",
+            "profile_url": "https://www.linkedin.com/in/parth-jayesh-shah",
+            "search_url": ""
+        },
+        {
+            "name": "Tamir Gerber",
+            "role": "CTO at Getida",
+            "location": "Fair Lawn, NJ",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Alejandra López",
+            "profile_url": "https://www.linkedin.com/in/tamirgerber",
+            "search_url": ""
+        },
+        {
+            "name": "Tyler Richie",
+            "role": "Interim CTO at Startup HFT Shop",
+            "location": "San Mateo, CA",
+            "connection": "• 2nd2nd degree connection",
+            "services": "CTO",
+            "profile_url": "https://www.linkedin.com/in/tyler-richie-1096b58",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22103644278%22%2C%22102095887%22%2C%2290000084%22%2C%2290000070%22%5D&industry=%5B%221594%22%2C%224%22%2C%2243%22%2C%2214%22%2C%222358%22%5D&keywords=CTO&origin=GLOBAL_SEARCH_HEADER&profileLanguage=%5B%22en%22%5D&sid=.%2Cv&page=2"
+}

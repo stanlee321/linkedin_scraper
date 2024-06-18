@@ -1,0 +1,12 @@
+{
+    "name": "string",
+    "role": "string",
+    "location": "string",
+    "connection": "string",
+    "services": "string",
+    "profile_url": "string",
+    "search_url": "string",
+    "page": 0,
+    "status": "active",
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }

@@ -1,0 +1,96 @@
+{
+    "page": 5,
+    "data": [
+        {
+            "name": "Alfredo Francisco Ramos Huallpa",
+            "role": "UI/UX Designer",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/alfredo-francisco-ramos",
+            "search_url": ""
+        },
+        {
+            "name": "Juan Carlos Catagña",
+            "role": "Flutter and iOS Developer, UI/UX Designer",
+            "location": "Quito",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Provides services - Application Development, Mobile Application Development, iOS Development, User Experience Design (UED), Software Testing",
+            "profile_url": "https://www.linkedin.com/in/juanca93",
+            "search_url": ""
+        },
+        {
+            "name": "J. Pablo Lizárraga",
+            "role": "UX/UI Designer en BairesDev",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/lizarragajp",
+            "search_url": ""
+        },
+        {
+            "name": "Lucia Bertram",
+            "role": "UI / UX Designer en Oktana Corporation",
+            "location": "Tarija, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/lucia-bertram",
+            "search_url": ""
+        },
+        {
+            "name": "Kelly Villarroel",
+            "role": "Graphic Designer | UX/UI | Visual Designer",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/kelly-villarroel-941364156",
+            "search_url": ""
+        },
+        {
+            "name": "Martín Miguel",
+            "role": "UX/UI Designer I Advertising Art Director",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/mart%C3%ADnmiguel",
+            "search_url": ""
+        },
+        {
+            "name": "Heber Angel Sanchez Oropeza",
+            "role": "Ingeniero Financiero / Especialista en Riesgos Financieros / Google Data Analyst Certified",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/heber-angel-sanchez-oropeza",
+            "search_url": ""
+        },
+        {
+            "name": "Juan Guzmán",
+            "role": "👨‍💻 Product Designer | 💭 Product Manager | ✨ \"UX/UI\" Designer | ✏️ Figma | Information architect | UX | UI | Notion Lover",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/juan-guzman-ux",
+            "search_url": ""
+        },
+        {
+            "name": "Andres Eguino Villarroel",
+            "role": "UI/Digital Designer en Crehana",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/andres-eguino-villarroel-b0b4511ba",
+            "search_url": ""
+        },
+        {
+            "name": "Matilde Corina Lopez",
+            "role": "Graphic Designer | UX/UI Designer at DDB",
+            "location": "Barcelona",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/matildecorina",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?keywords=ui%20ux%20designer&origin=SWITCH_SEARCH_VERTICAL&sid=Jgp&page=5"
+}

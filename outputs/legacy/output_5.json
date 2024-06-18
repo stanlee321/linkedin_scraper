@@ -1,0 +1,33 @@
+{
+    "page": 5,
+    "data": [
+        {
+            "name": "Tim Clark",
+            "role": "CTO Nsight Health, Inc.",
+            "location": "Longwood, FL",
+            "connection": "• 2nd2nd degree connection",
+            "services": "CTO",
+            "profile_url": "https://www.linkedin.com/in/timothyclark",
+            "search_url": ""
+        },
+        {
+            "name": "Thaddeus Savauge",
+            "role": "CTO at SpotSaver | Now Hiring!",
+            "location": "New York, NY",
+            "connection": "• 2nd2nd degree connection",
+            "services": "CTO",
+            "profile_url": "https://www.linkedin.com/in/thaddeus-savauge-86153118a",
+            "search_url": ""
+        },
+        {
+            "name": "Kenneth Corriveau 💥",
+            "role": "Digital Transformation Executive | Chief Information Officer | CIO | CTO | Technology & Cyber Security Operation | C-Suite | Strategist | Speaker",
+            "location": "New York City Metropolitan Area",
+            "connection": "• 2nd2nd degree connection",
+            "services": "CTO",
+            "profile_url": "https://www.linkedin.com/in/kennethcorriveau",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?geoUrn=%5B%22103644278%22%2C%22102095887%22%2C%2290000084%22%2C%2290000070%22%5D&industry=%5B%221594%22%2C%224%22%2C%2243%22%2C%2214%22%2C%222358%22%5D&keywords=CTO&origin=GLOBAL_SEARCH_HEADER&profileLanguage=%5B%22en%22%5D&sid=.%2Cv&page=5"
+}

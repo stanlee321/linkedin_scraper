@@ -1,0 +1,96 @@
+{
+    "page": 3,
+    "data": [
+        {
+            "name": "Nicolás Juárez",
+            "role": "Cyber Security at Mercado Libre",
+            "location": "Argentina",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Security",
+            "profile_url": "https://www.linkedin.com/in/nicolas--juarez",
+            "search_url": ""
+        },
+        {
+            "name": "",
+            "role": "Cyber Security Coordinator | Santander Digital Service",
+            "location": "São Paulo, SP",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/marco-silami",
+            "search_url": ""
+        },
+        {
+            "name": "Braian Fernandez",
+            "role": "Cyber Security Analyst SOC @ CTL Information Technology",
+            "location": "Buenos Aires",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/braian-fernandez-",
+            "search_url": ""
+        },
+        {
+            "name": "Humberto Abrego",
+            "role": "Cyber Security Consultant & Cloud Specialist",
+            "location": "San Pedro Garza García, NLE",
+            "connection": "• 2nd2nd degree connection",
+            "services": "security",
+            "profile_url": "https://www.linkedin.com/in/humberto-abrego-051641144",
+            "search_url": ""
+        },
+        {
+            "name": "Nahuel Matías Menendez",
+            "role": "Cyber Security Analyst at American Airlines",
+            "location": "Argentina",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/nahuel-mat%C3%ADas-menendez-b91a75180",
+            "search_url": ""
+        },
+        {
+            "name": "Diego Maspero Castro",
+            "role": "Cyber Security & IT Infrastructure Consultant",
+            "location": "Cordoba",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/diego-maspero-castro",
+            "search_url": ""
+        },
+        {
+            "name": "Juan Pablo Ríos Castañeda",
+            "role": "Cyber Security Team Lead Americas",
+            "location": "Chile",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/juan-pablo-r%C3%ADos-casta%C3%B1eda-29b13937",
+            "search_url": ""
+        },
+        {
+            "name": "Federico Massa",
+            "role": "Head of Cyber Security",
+            "location": "Rosario",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/fgmassa",
+            "search_url": ""
+        },
+        {
+            "name": "Janaína Marcondes",
+            "role": "Cyber Security | IAM | PAM | GRC",
+            "location": "São Paulo, SP",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/jana%C3%ADnamarcondes",
+            "search_url": ""
+        },
+        {
+            "name": "",
+            "role": "Cyber Security Analyst",
+            "location": "Paraguay",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Cyber",
+            "profile_url": "https://www.linkedin.com/in/cesar-veron",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?keywords=cyber%20security&origin=SWITCH_SEARCH_VERTICAL&searchId=ac645e98-0596-486e-8057-6700c5df26ea&sid=afe&page=3"
+}

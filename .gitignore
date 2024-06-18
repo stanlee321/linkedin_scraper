@@ -1,3 +1,4 @@
 auth/*.json
 outputs/*.json
 libs/auth/*.json
+*.html

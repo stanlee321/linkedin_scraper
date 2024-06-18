@@ -1,0 +1,96 @@
+{
+    "page": 3,
+    "data": [
+        {
+            "name": "Mayra Vásquez",
+            "role": "UX/UI Designer",
+            "location": "La Paz",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/mayra-v%C3%A1squez-b770b8bb",
+            "search_url": ""
+        },
+        {
+            "name": "Iver Mejia Castillo",
+            "role": "UI/UX - Graphic Designer",
+            "location": "Pedro Domingo Murillo",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/ivermc",
+            "search_url": ""
+        },
+        {
+            "name": "Rodrigo Yañez Lozano",
+            "role": "UX/UI Designer | Digital Strategist",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Designer",
+            "profile_url": "https://www.linkedin.com/in/rodrigoya%C3%B1ezlozano",
+            "search_url": ""
+        },
+        {
+            "name": "Erick Gutiérrez Delgadillo",
+            "role": "UX/UI Designer | Figma | HTML | CSS | JS & ReactJS training",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/arcerick",
+            "search_url": ""
+        },
+        {
+            "name": "Melany Ventura",
+            "role": "💻 Web Developer | 🎨 UX/UI Designer | 🐧 WTM Ambassador",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/melany-ventura",
+            "search_url": ""
+        },
+        {
+            "name": "Alexi Antezana Cardona",
+            "role": "UX/UI Designer | Product Owner | Scrum Master",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/alexi-antezana-cardona-32b7a1198",
+            "search_url": ""
+        },
+        {
+            "name": "Samantha Zambrana Revollo",
+            "role": "Frontend developer, UX/UI designer, C1 English | #react #javascript #figma #UXengineer",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/samanthazambrana",
+            "search_url": ""
+        },
+        {
+            "name": "Valentina Perez Moreno",
+            "role": "UX/UI Designer | Product Designer",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/valentinaxperez",
+            "search_url": ""
+        },
+        {
+            "name": "Sergio Gabriel Loza Lucero",
+            "role": "Flutter developer | UX/UI designer",
+            "location": "La Paz",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Diana Vargas",
+            "profile_url": "https://www.linkedin.com/in/sergio-gabriel-loza-lucero",
+            "search_url": ""
+        },
+        {
+            "name": "Ignacio Soto",
+            "role": "UX/UI Designer / UX Research",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/ignacio-soto-bb840711b",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?keywords=ui%20ux%20designer&origin=SWITCH_SEARCH_VERTICAL&sid=Jgp&page=3"
+}

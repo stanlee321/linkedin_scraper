@@ -1,0 +1,96 @@
+{
+    "page": 2,
+    "data": [
+        {
+            "name": "Jorge LLanque",
+            "role": "Software Engineer | .Net Core + ReactJs",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/jorgellanque",
+            "search_url": ""
+        },
+        {
+            "name": "Jose Marcos Troncoso",
+            "role": "Software Engineer | Tech Lead | .NET",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/jmarcost",
+            "search_url": ""
+        },
+        {
+            "name": "Alejandro Pugliesi Soliz",
+            "role": "Pragmatic Full Stack Software Engineer (Remote) – .Net Core| .Net Framework | JavaScript | Angular | React | Agile CSD®",
+            "location": "Provincia Andrés Ibáñez",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/alejandropugliesi",
+            "search_url": ""
+        },
+        {
+            "name": "Ericka M. Viraca S.",
+            "role": "Senior Software Developer at AssureSoft | C# | React.Js | .Net | AWS",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/ericka-m-viraca-s-8804b0146",
+            "search_url": ""
+        },
+        {
+            "name": "Leonardo Quispe Morales",
+            "role": "Full Stack Developer | Mobile & Web Apps | Angular | .Net Core | Flutter | MySQL | PostgreSQL",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/leonardo-quispe-dev",
+            "search_url": ""
+        },
+        {
+            "name": "José Manuel Cadima Aponte",
+            "role": ".Net Software Architect",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Carlos Flávio G. Arruda",
+            "profile_url": "https://www.linkedin.com/in/jos%C3%A9-manuel-cadima-aponte-a070a4185",
+            "search_url": ""
+        },
+        {
+            "name": "Martin Apaza Rodríguez, CSM, CSPO",
+            "role": "Senior .Net Developer",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/martin-apaza-rodr%C3%ADguez-csm-cspo-724918159",
+            "search_url": ""
+        },
+        {
+            "name": "Alejandro Aguirre",
+            "role": "Backend developer | .net6+ | Angular",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".net",
+            "profile_url": "https://www.linkedin.com/in/alejandro-aguirre-b7982a17b",
+            "search_url": ""
+        },
+        {
+            "name": "Dennys Choquecallata",
+            "role": "Remote Senior Software Engineer at Unosquare | .NET | C# | JS",
+            "location": "Cochabamba",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/dennys-choquecallata",
+            "search_url": ""
+        },
+        {
+            "name": "Marco López",
+            "role": "Software Developer | Angular | .Net",
+            "location": "Cochabamba",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/marco-l%C3%B3pez-88450116",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/PEOPLE/?keywords=.net&origin=SWITCH_SEARCH_VERTICAL&sid=e(!&page=2"
+}

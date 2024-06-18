@@ -251,9 +251,7 @@ class LinkedInScraper:
                 # Save data
                 if self.save_json:
                     self.save_extracted_data(profiles, page )
-
                 data.append(profiles)
-        print("Done!")
         return data
 
     def extract_information(self, li_elements : List[BeautifulSoup], page: int) -> dict:
@@ -315,7 +313,7 @@ class LinkedInScraper:
         return profiles
     
     def save_extracted_data(self, data, page_number):
-        path = f"{self.folders[0]}/output_{page_number}.json"
+        path = f"{self.folders[0]}/output_{page_number}_.json"
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, 'w') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
@@ -411,9 +409,7 @@ def main():
     
     scraper.search_and_extract(**kwargs, debug=True)
     
-    # Load some profile 
-    # profile_test = "https://www.linkedin.com/in/fernando-terrazas-79abab5/"
-    # self.send_connection_request(profile_test)
+
 
     time.sleep(20)
     scraper.driver.quit()

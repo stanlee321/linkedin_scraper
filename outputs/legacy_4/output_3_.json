@@ -1,0 +1,96 @@
+{
+    "page": 3,
+    "data": [
+        {
+            "name": "Paul Diego Cavero Sanchez",
+            "role": ".Net Full stack Developer",
+            "location": "Provincia Andrés Ibáñez",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/paul-diego-cavero-sanchez-aaa26462",
+            "search_url": ""
+        },
+        {
+            "name": "Jorge Cochoza",
+            "role": "Full Stack Developer",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/jcochoza",
+            "search_url": ""
+        },
+        {
+            "name": "Hector Marcelo Hidalgo",
+            "role": "Software Engineer | Backend | C# ASP .NET Core | NodeJS",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Pierina Batalla",
+            "profile_url": "https://www.linkedin.com/in/hector-marcelo-hidalgo",
+            "search_url": ""
+        },
+        {
+            "name": "Boris López Rivera",
+            "role": "Full Stack Developer",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/boris-lopez-rivera",
+            "search_url": ""
+        },
+        {
+            "name": "Diego Alejandro Cuellar",
+            "role": "Software Developer | Software Engineer Back-End | .NET | C# | JS |",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/diegocuellarjustiniano",
+            "search_url": ""
+        },
+        {
+            "name": "Jesus Cristhian Yujra Huanca",
+            "role": "Software Developer Frontend & Backend (Vue, React, Angular, Express, Java, Python, .NET)",
+            "location": "La Paz",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Diana Vargas",
+            "profile_url": "https://www.linkedin.com/in/jesus-cristhian-yujra-huanca-69a3ba1b5",
+            "search_url": ""
+        },
+        {
+            "name": "Jimy Cespedes",
+            "role": ".Net Full Stack Developer",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/jimy-cespedes",
+            "search_url": ""
+        },
+        {
+            "name": "Marcelo Alejandro Castaño Reyes",
+            "role": "Software Engieneer - Backend | Frontend | PHP | Android | Java | Servicios Web | RestFul | SQL Server | MySQL | Scrum | Agile",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/marcelo-alejandro-castano-reyes-084556171",
+            "search_url": ""
+        },
+        {
+            "name": "Ruddy Claros Fernández",
+            "role": "BackEnd .Net Developer | Data Analyst Beginner | Microsoft Technologies | Accountant",
+            "location": "La Paz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Ayar Yuman Paco Sanizo",
+            "profile_url": "https://www.linkedin.com/in/ruddy-ivan-claros-fernandez",
+            "search_url": ""
+        },
+        {
+            "name": "Daiki Chibana",
+            "role": "Software Engineer | React.js | Node.js | .Net Core",
+            "location": "Provincia Andrés Ibáñez",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/daikichibana",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/PEOPLE/?keywords=.net&origin=SWITCH_SEARCH_VERTICAL&sid=e(!&page=3"
+}

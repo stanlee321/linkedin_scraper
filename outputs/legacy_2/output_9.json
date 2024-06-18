@@ -1,0 +1,96 @@
+{
+    "page": 9,
+    "data": [
+        {
+            "name": "kevin Milan",
+            "role": "Software Enginer | Front End Developer | node js | Designer interface UX / UI | Digital Marketing | inglés intermedio - aprendiendo",
+            "location": "Cercado",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/kevin-milan-114b4a98",
+            "search_url": ""
+        },
+        {
+            "name": "Matias Ochoa Payva",
+            "role": "UX UI Designer",
+            "location": "Mar del Plata",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/8adg",
+            "search_url": ""
+        },
+        {
+            "name": "Ximena Cruz",
+            "role": "Systems Engineer | Full Stack Developer | Data Analytics | Designer UX/UI",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "Carlos Olivera Terrazas",
+            "profile_url": "https://www.linkedin.com/in/ximena-cruz1501",
+            "search_url": ""
+        },
+        {
+            "name": "Rocío Zavala",
+            "role": "Sr. Full-stack Developer and UI/UX Designer",
+            "location": "Querétaro, QUE",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/iscrzavala",
+            "search_url": ""
+        },
+        {
+            "name": "Leonardo Cossio",
+            "role": "Senior Digital Designer & UX/UI Product Designer",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/leonardo-cossio-35889625",
+            "search_url": ""
+        },
+        {
+            "name": "Diego A. Miranda Santa Cruz",
+            "role": "UX/UI Designer - No Code Web Developer",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "designer",
+            "profile_url": "https://www.linkedin.com/in/diego-a-miranda-santa-cruz-477b41160",
+            "search_url": ""
+        },
+        {
+            "name": "Clever Arnez Ponce",
+            "role": "Jr. Front-End Developer | WordPress | Graphic Designer | UX/UI | Scrum | Freelancer",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UX",
+            "profile_url": "https://www.linkedin.com/in/arnezponceclever",
+            "search_url": ""
+        },
+        {
+            "name": "Nicolas Bermudez",
+            "role": "UI/UX Designer en Kaizen Softworks",
+            "location": "Montevideo",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/nicolasbermudez94",
+            "search_url": ""
+        },
+        {
+            "name": "Alejandra Arevalo Castrati",
+            "role": "UX / UI Designer | Professional Photographer",
+            "location": "Cercado",
+            "connection": "• 2nd2nd degree connection",
+            "services": "designer",
+            "profile_url": "https://www.linkedin.com/in/alejandra-arevalo-castrati",
+            "search_url": ""
+        },
+        {
+            "name": "Pamela Wendy A.",
+            "role": "UI / UX Designer | Open to Freelance",
+            "location": "Mexico",
+            "connection": "• 2nd2nd degree connection",
+            "services": "UI",
+            "profile_url": "https://www.linkedin.com/in/pame-arnez",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/people/?keywords=ui%20ux%20designer&origin=SWITCH_SEARCH_VERTICAL&sid=Jgp&page=9"
+}

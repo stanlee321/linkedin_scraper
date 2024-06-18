@@ -1,0 +1,96 @@
+{
+    "page": 1,
+    "data": [
+        {
+            "name": "Yerson Jhonatan Ramirez Yañez",
+            "role": "C# .Net Developer",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/yerson-jhonatan-ramirez-ya%C3%B1ez-6a8340a7",
+            "search_url": ""
+        },
+        {
+            "name": "Cristof Lora Avendaño",
+            "role": "Software developer | .Net | .NetCore | MSSQL Server",
+            "location": "Sucre",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/cristof-lora-avenda%C3%B1o-5786679b",
+            "search_url": ""
+        },
+        {
+            "name": "",
+            "role": "Desarrollador Backend .NET",
+            "location": "La Paz",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/ariel-espinoza-539b9480",
+            "search_url": ""
+        },
+        {
+            "name": "Andres Villarroel",
+            "role": "Sr Full-Stack Developer | .Net Core, Blazor, Azure",
+            "location": "Cochabamba, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/andres-villarroel-2928061b",
+            "search_url": ""
+        },
+        {
+            "name": "Miguel Torrico",
+            "role": ".NET FULLSTACK DEVELOPER | NODEJS | REACTJS",
+            "location": "Cochabamba",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/miguel-torrico-2a9a0852",
+            "search_url": ""
+        },
+        {
+            "name": "Ivan Navarro",
+            "role": ".NET Backend developer",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/ivan-navarro-valdiviezo",
+            "search_url": ""
+        },
+        {
+            "name": "Marcelo Casanovas",
+            "role": "Senior Technical Leader & Expert in .NET Core/Blazor Development | Software Engineer | FullStack Developer | Cybersecurity Specialist | Proven Track Record in Leading High-Performance Tech Teams | DevOps Enthusiast",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".Net",
+            "profile_url": "https://www.linkedin.com/in/marcelo-casanovas-dev",
+            "search_url": ""
+        },
+        {
+            "name": "Enrique Núñez Céspedes",
+            "role": "Software Engineer | .NET | Blazor | Angular | Flutter",
+            "location": "Santa Cruz de la Sierra",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/enriquenez",
+            "search_url": ""
+        },
+        {
+            "name": "Patricia Pino Mundaca",
+            "role": "Software Architect, .NET Senior Developer / Team Lead / 15 yrs exp",
+            "location": "Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/patricia-pino-mundaca-872505136",
+            "search_url": ""
+        },
+        {
+            "name": "José Gerardo Solano Romero",
+            "role": "Full Stack .Net Developer",
+            "location": "Santa Cruz, Bolivia",
+            "connection": "• 2nd2nd degree connection",
+            "services": ".NET",
+            "profile_url": "https://www.linkedin.com/in/jos%C3%A9-gerardo-solano-romero-ab906013b",
+            "search_url": ""
+        }
+    ],
+    "search_url": "https://www.linkedin.com/search/results/PEOPLE/?keywords=.net&origin=SWITCH_SEARCH_VERTICAL&sid=e(!&page=1"
+}
