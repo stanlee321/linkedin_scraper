@@ -1,3 +1,4 @@
 kafka-python
 pyyaml
 aiokafka
+bs4

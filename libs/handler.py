@@ -1,13 +1,11 @@
 from typing import List, Union
-
+import uuid
+import json
 from libs.linkedin_scraper import LinkedInScraper
 from aiokafka import AIOKafkaConsumer, AIOKafkaProducer
-
-from data_source.kafka import KafkaHandler
 from utils.commons import transform_data
 from utils.api import (make_post_request, 
                        make_put_request)
-from typing import List, Union
 
 
 def check(list):
@@ -22,18 +20,17 @@ class ScraperHandler:
                  debug: bool = True,
                  scraper: LinkedInScraper = None
                  ):
-        
-        self.kafka_handler = KafkaHandler(
-            topic_name=topic_query, 
-            bootstrap_servers=bootstrap_servers)
 
+        self.bootstrap_servers = bootstrap_servers
         self.lkdn_handler: LinkedInScraper = scraper
-        self.topic = topic_query
+        self.topic_query = topic_query
         self.topic_data = topic_data
         self.api_url = api_url
         self.debug  = debug
+        self.group_id = str(uuid.uuid4())  # Generate a unique UUID for group_id
 
-    async def produce(self, producer: AIOKafkaProducer):
+
+    async def async_producer(self, producer: AIOKafkaProducer):
         # Produce a message
         data = {
             'search_pattern': 'kafka developer', 
@@ -45,6 +42,16 @@ class ScraperHandler:
         await producer.flush()
         print("Message produced to Kafka topic:", self.topic)
         
+    async def get_async_consumer(self):
+        consumer = AIOKafkaConsumer(
+            self.topic_query,
+            self.topic_data,
+            bootstrap_servers=self.bootstrap_servers,
+            group_id=self.group_id,
+            auto_offset_reset='earliest'
+        )
+        return consumer
+
     def create_payload(self, data: dict) -> Union[dict, None]:
                                 
         page_start = data.get('start_at', 1)
@@ -85,38 +92,43 @@ class ScraperHandler:
         return status_ok, status_fail
     
     async def consume_search(self, consumer: AIOKafkaConsumer):
-
+        
+        print("Consuming messages from Kafka topic:", self.topic_data)
         # Consume messages
-        async for message in consumer:
-            print("Consumed message from Kafka topic:", message.value)
-            
-            data: dict = message.value 
-            # Topic
-            task_id = data['task_id']
-            
-            output_data_list = await self.lkdn_handler.extract_from_url(**data, debug=self.debug)
-            if output_data_list is None:
-                print("No data extracted")
-                continue
-            
-            status_ok, status_fail = await self.send_data(output_data_list)  
+        try:   
+            async for message in consumer:
+                print("Consumed message from Kafka topic:", message.value)
                 
-            if check(status_ok):
-                await self.update_task(task_id, "OK" )
-            else:
-                await self.update_task(task_id, "WITH ISSUES")
-                print(status_fail)
+                data: dict = json.loads(message.value.decode('utf-8'))  # Decode and deserialize the message
+                
+                # Topic
+                task_id = data['task_id']
+                
+                output_data_list = await self.lkdn_handler.extract_from_url(**data, debug=self.debug)
+                if output_data_list is None:
+                    print("No data extracted")
+                    continue
+                
+                status_ok, status_fail = await self.send_data(output_data_list)  
+                    
+                if check(status_ok):
+                    await self.update_task(task_id, "OK" )
+                else:
+                    await self.update_task(task_id, "WITH ISSUES")
+                    print(status_fail)
+        finally:
+            await consumer.stop()
 
     async def consume_message(self, consumer: AIOKafkaConsumer):
-
+        print("Consuming messages from Kafka topic:", self.topic_data)
         # Consume messages
         async for message in consumer:
             print("Consumed message from Kafka:", message.value)
             
-            data: dict = message.value
+            data: dict = json.loads(message.value.decode('utf-8'))  # Decode and deserialize the message
             task_id = data['task_id']
             
-            connection_request_status = await self.lkdn_handler.send_connection_request(
+            connection_request_status = self.lkdn_handler.send_connection_request(
                 data['profile_url'], data['message'], )
             
             if connection_request_status:
@@ -124,23 +136,23 @@ class ScraperHandler:
             else:
                 await self.update_task(task_id, "FAIL" )
 
-
     async def update_task(self, task_id, status):
         payload = {
             "task_status": status
         }
         res = await make_put_request(url=self.api_url + f"/v1/tasks/{task_id}" , data=payload, headers=None)
         
-        if res.json()["status_code"] == 201:
+        if res is not None and res.json()["status_code"] == 201:
             print("OK")
         else:
             print("ERROR IN TASK UPDATE")
         
-                            
+
     async def run(self, ):
         print("running...")
-        consumer: AIOKafkaConsumer = self.kafka_handler.get_async_consumer()
-        
+        consumer: AIOKafkaConsumer = await self.get_async_consumer()
+        await consumer.start()
+    
         if self.topic_data == 'SEARCH':
             await self.consume_search(consumer)
 

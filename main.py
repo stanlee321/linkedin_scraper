@@ -11,7 +11,7 @@ def load_config(file_path):
         return yaml.safe_load(file)
 
 async def main():
-    config = load_config('config.yaml')
+    config = load_config('configs.yaml')
 
     bootstrap_servers = config['bootstrap_servers']
     topics = config['topics']
