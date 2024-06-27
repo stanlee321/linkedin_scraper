@@ -25,7 +25,7 @@ from libs.utils import (load_data_from_json,
 from typing import List, Union
 
 class LinkedInScraper:
-    def __init__(self, save_json=True,):
+    def __init__(self, save_json=True, headless = False):
         
         self.folders = ["./outputs", "./auth"]
         
@@ -38,19 +38,30 @@ class LinkedInScraper:
         self.local_storage_path = f"{self.folders[1]}/local_storage.json"
         
         
-        self.driver = self.initialize_driver()
+        self.driver = self.initialize_driver(headless)
         self.action = ActionChains(self.driver)
         self.wait = WebDriverWait(self.driver, 20)
         self.save_json = save_json
 
         
-    def initialize_driver(self):
+    def initialize_driver(self, headless: bool):
         options = webdriver.EdgeOptions()
+        
+
+        options.use_chromium = True  # if we miss this line, we can't make Edge headless
+        # A little different from Chrome cause we don't need two lines before 'headless' and 'disable-gpu'
+
         options.use_chromium = True
         options.add_argument("start-maximized")
+        if headless:
+            options.add_argument('headless')
+            options.add_argument('disable-gpu')
+
         options.page_load_strategy = 'eager'
         options.add_argument(f"user-agent={self.user_agent}")
         options.add_experimental_option("detach", True)
+        
+        
 
         return webdriver.Edge(options=options)
 

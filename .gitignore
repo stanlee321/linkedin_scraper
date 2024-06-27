@@ -3,4 +3,4 @@ outputs/*.json
 libs/auth/*.json
 outputs/**/*.json
 *.html
-
+config/__pycache__/
