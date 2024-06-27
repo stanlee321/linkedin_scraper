@@ -83,7 +83,12 @@ class ScraperHandler:
             for profile in data['data']:
                 clean_data = transform_data(profile, page, search_url)
                 # Send to API
-                res = await make_post_request(url=self.api_url + "/v1/profile", data=clean_data, headers=None)
+                try:
+                    res = await make_post_request(url=self.api_url + "/v1/profile", data=clean_data, headers=None)
+                except Exception as e:
+                    print(f"Error sending data to API: {e}")
+                    res = None
+                    
                 if res is not None:
                     status_ok.append('OK')
                 else:
@@ -104,14 +109,20 @@ class ScraperHandler:
                 # Topic
                 task_id = data['task_id']
                 
-                output_data_list = await self.lkdn_handler.extract_from_url(**data, debug=self.debug)
+                output_data_list = self.lkdn_handler.extract_from_url(**data, debug=self.debug)
                 if output_data_list is None:
                     print("No data extracted")
                     continue
                 
-                status_ok, status_fail = await self.send_data(output_data_list)  
+                try:
+                        
+                    status_ok, status_fail = await self.send_data(output_data_list)
+                except Exception as e:
+                    print(f"Error sending data to API: {e}")
+                    status_ok = None
+                    status_fail = []
                     
-                if check(status_ok):
+                if status_ok is not None and  check(status_ok):
                     await self.update_task(task_id, "OK" )
                 else:
                     await self.update_task(task_id, "WITH ISSUES")
