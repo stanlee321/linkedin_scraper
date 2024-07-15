@@ -1,5 +1,5 @@
 # Use a specific version tag for the Selenium standalone image
-FROM selenium/standalone-chromium:latest
+FROM selenium/standalone-edge:4.22.0-20240621
 
 # Set the working directory
 WORKDIR /app

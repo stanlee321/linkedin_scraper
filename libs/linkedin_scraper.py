@@ -2,14 +2,19 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.remote.remote_connection import LOGGER
-import logging
+from selenium.webdriver.chrome.service import Service as ChromeService
+
 from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager
+
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import time
 import re
 import json
 import os
+import logging
+
 
 LOGGER.setLevel(logging.WARNING)
 
@@ -45,25 +50,28 @@ class LinkedInScraper:
 
         
     def initialize_driver(self, headless: bool):
-        options = webdriver.EdgeOptions()
+        options = webdriver.ChromeOptions()
         
 
-        options.use_chromium = True  # if we miss this line, we can't make Edge headless
+        # options.use_chromium = True  # if we miss this line, we can't make Edge headless
         # A little different from Chrome cause we don't need two lines before 'headless' and 'disable-gpu'
 
-        options.use_chromium = True
+        # options.use_chromium = True
         options.add_argument("start-maximized")
         if headless:
+            print("Headless mode")
             options.add_argument('headless')
             options.add_argument('disable-gpu')
 
         options.page_load_strategy = 'eager'
         options.add_argument(f"user-agent={self.user_agent}")
         options.add_experimental_option("detach", True)
-        
+        options.add_argument("--disable-dev-shm-usage") #overcome limited resource problems
+        options.add_argument('--no-sandbox')
+
         
 
-        return webdriver.Edge(options=options)
+        return webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
 
     def load_cookies_and_local_storage(self):
         print("self.cookie_path", self.cookie_path)
@@ -99,7 +107,7 @@ class LinkedInScraper:
 
 
 
-    def extract_data(self, driver : webdriver.Edge, fullpath: str) -> List:
+    def extract_data(self, driver : webdriver.Chrome, fullpath: str) -> List:
         html_content = driver.page_source
         soup = BeautifulSoup(html_content, "html.parser")
         

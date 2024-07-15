@@ -2,3 +2,6 @@ kafka-python
 pyyaml
 aiokafka
 bs4
+httpx
+selenium==4.22.0
+webdriver-manager
