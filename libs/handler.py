@@ -2,11 +2,13 @@ from typing import List, Union
 import uuid
 import json
 from libs.linkedin_scraper import LinkedInScraper
-from aiokafka import AIOKafkaConsumer, AIOKafkaProducer
+from aiokafka import AIOKafkaConsumer, AIOKafkaProducer, errors
+
 from utils.commons import transform_data
 from utils.api import (make_post_request, 
                        make_put_request)
-
+import asyncio
+import logging
 
 def check(list):
     return all(i == list[0] for i in list)
@@ -97,55 +99,76 @@ class ScraperHandler:
         return status_ok, status_fail
     
     async def consume_search(self, consumer: AIOKafkaConsumer):
-        
         print("Consuming messages from Kafka topic:", self.topic_data)
-        # Consume messages
-        try:   
-            async for message in consumer:
-                print("Consumed message from Kafka topic:", message.value)
-                
-                data: dict = json.loads(message.value.decode('utf-8'))  # Decode and deserialize the message
-                
-                # Topic
-                task_id = data['task_id']
-                
-                output_data_list = self.lkdn_handler.extract_from_url(**data, debug=self.debug)
-                if output_data_list is None:
-                    print("No data extracted")
-                    continue
-                
-                try:
-                        
-                    status_ok, status_fail = await self.send_data(output_data_list)
-                except Exception as e:
-                    print(f"Error sending data to API: {e}")
-                    status_ok = None
-                    status_fail = []
+        while True:
+            try:
+                async for message in consumer:
+                    print("Consumed message from Kafka topic:", message.value)
                     
-                if status_ok is not None and  check(status_ok):
-                    await self.update_task(task_id, "OK" )
-                else:
-                    await self.update_task(task_id, "WITH ISSUES")
-                    print(status_fail)
-        finally:
-            await consumer.stop()
+                    data: dict = json.loads(message.value.decode('utf-8'))  # Decode and deserialize the message
+                    
+                    # Topic
+                    task_id = data['task_id']
+                    
+                    output_data_list = self.lkdn_handler.extract_from_url(**data, debug=self.debug)
+                    if output_data_list is None:
+                        print("No data extracted")
+                        continue
+                    
+                    try:
+                        status_ok, status_fail = await self.send_data(output_data_list)
+                    except Exception as e:
+                        print(f"Error sending data to API: {e}")
+                        status_ok = None
+                        status_fail = []
+                        
+                    if status_ok is not None and check(status_ok):
+                        await self.update_task(task_id, "OK")
+                    else:
+                        await self.update_task(task_id, "WITH ISSUES")
+                        print(status_fail)
+            except errors.GroupCoordinatorNotAvailableError as e:
+                logging.error(f"Kafka Group Coordinator error: {e}")
+                print(f"Error consuming message from Kafka: {e}")
+                await asyncio.sleep(5)  # Wait before retrying
+            except errors.KafkaError as e:
+                logging.error(f"Kafka error: {e}")
+                print(f"Error consuming message from Kafka: {e}")
+                await asyncio.sleep(5)  # Wait before retrying
+            except Exception as e:
+                logging.error(f"Unexpected error: {e}")
+                print(f"Error consuming message from Kafka: {e}")
+                await asyncio.sleep(5)  # Wait before retrying
 
     async def consume_message(self, consumer: AIOKafkaConsumer):
         print("Consuming messages from Kafka topic:", self.topic_data)
-        # Consume messages
-        async for message in consumer:
-            print("Consumed message from Kafka:", message.value)
-            
-            data: dict = json.loads(message.value.decode('utf-8'))  # Decode and deserialize the message
-            task_id = data['task_id']
-            
-            connection_request_status = self.lkdn_handler.send_connection_request(
-                data['profile_url'], data['message'], )
-            
-            if connection_request_status:
-                await self.update_task(task_id, "OK" )
-            else:
-                await self.update_task(task_id, "FAIL" )
+        while True:
+            try:
+                async for message in consumer:
+                    print("Consumed message from Kafka:", message.value)
+                    
+                    data: dict = json.loads(message.value.decode('utf-8'))  # Decode and deserialize the message
+                    task_id = data['task_id']
+                    
+                    connection_request_status = self.lkdn_handler.send_connection_request(
+                        data['profile_url'], data['message'])
+                    
+                    if connection_request_status:
+                        await self.update_task(task_id, "OK")
+                    else:
+                        await self.update_task(task_id, "FAIL")
+            except errors.GroupCoordinatorNotAvailableError as e:
+                logging.error(f"Kafka Group Coordinator error: {e}")
+                print(f"Error consuming message from Kafka: {e}")
+                await asyncio.sleep(5)  # Wait before retrying
+            except errors.KafkaError as e:
+                logging.error(f"Kafka error: {e}")
+                print(f"Error consuming message from Kafka: {e}")
+                await asyncio.sleep(5)  # Wait before retrying
+            except Exception as e:
+                logging.error(f"Unexpected error: {e}")
+                print(f"Error consuming message from Kafka: {e}")
+                await asyncio.sleep(5)  # Wait before retrying
 
     async def update_task(self, task_id, status):
         payload = {
