@@ -148,10 +148,14 @@ class ScraperHandler:
                     print("Consumed message from Kafka:", message.value)
                     
                     data: dict = json.loads(message.value.decode('utf-8'))  # Decode and deserialize the message
+                    
                     task_id = data['task_id']
+                    profile_url = data['profile_url']
+                    message = data['message']
+                    send_without_note = data.get('send_without_note', False)
                     
                     connection_request_status = self.lkdn_handler.send_connection_request(
-                        data['profile_url'], data['message'])
+                        profile_url, message, send_without_note )
                     
                     if connection_request_status:
                         await self.update_task(task_id, "OK")

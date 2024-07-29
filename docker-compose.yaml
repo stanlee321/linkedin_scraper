@@ -1,14 +1,14 @@
 version: '3.5'
 services:
-  scraper:
-    image: ippb/linkend_selenium:latest
-    container_name: scraper
-    restart: always
-    volumes:
-      - ./auth:/app/auth
-      - ./configs.yaml:/app/configs.yaml
-    environment:
-      - HEADLESS=1
+  # scraper:
+  #   image: stanlee321/linkend_selenium:latest
+  #   container_name: scraper
+  #   restart: always
+  #   volumes:
+  #     - ./auth:/app/auth
+  #     - ./configs.yaml:/app/configs.yaml
+  #   environment:
+  #     - HEADLESS=1
   kafka-ui:
     image: provectuslabs/kafka-ui
     container_name: kafka-ui

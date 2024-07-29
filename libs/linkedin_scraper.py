@@ -19,7 +19,7 @@ import logging
 LOGGER.setLevel(logging.WARNING)
 
 # from libs.settings import CONFIG
-from libs.utils import (load_data_from_json,
+from utils import (load_data_from_json,
                    save_data_to_json, 
                    add_cookies, 
                    add_local_storage, 
@@ -337,7 +337,7 @@ class LinkedInScraper:
         with open(path, 'w') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
-    def send_connection_request(self, profile_url: str, message=str) -> bool:
+    def send_connection_request(self, profile_url: str, message=str, send_without_note:bool = False) -> bool:
         self.driver.get(profile_url)
         time.sleep(5)
         
@@ -353,37 +353,46 @@ class LinkedInScraper:
             return False
 
         time.sleep(5)
+        if send_without_note:
+            print("Send connection request without note")
+            css_path_send_without_note = "html > body > div:nth-of-type(3) > div > div > div:nth-of-type(3) > button:nth-of-type(2)"
+            try:    
+                connect_button_element = self.driver.find_element(By.CSS_SELECTOR, css_path_send_without_note)
+                connect_button_element.click()
+            except Exception as e:
+                print(f"Error: {e}")
+                return False
+        else:
+            # Click on "Add Note" button
+            css_path_add_note = "html > body > div:nth-of-type(3) > div > div > div:nth-of-type(3) > button:first-of-type"
+            try:
+                connect_button_element = self.driver.find_element(By.CSS_SELECTOR, css_path_add_note)
+                connect_button_element.click()
+            except Exception as e:
+                print(f"Error: {e}")
+                return False
+            time.sleep(5)
+            # Add custom message to the connection request
+            css_path_text_area = "html > body > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:first-of-type > textarea"
+            try:
+                text_area_element = self.driver.find_element(By.CSS_SELECTOR, css_path_text_area)
+                text_area_element.send_keys(message)
+            except Exception as e:
+                print(f"Error: {e}")
+                return False
+            
+            time.sleep(5)
+            # Send the connection request   
+            css_path_send_message =   "html > body > div:nth-of-type(3) > div > div > div:nth-of-type(4) > button:nth-of-type(2)"
+            try:
+                send_button_element = self.driver.find_element(By.CSS_SELECTOR, css_path_send_message)
+                print(send_button_element.text)
+                # send_button_element.click()
 
-        # Click on "Add Note" button
-        css_path_add_note = "html > body > div:nth-of-type(3) > div > div > div:nth-of-type(3) > button:first-of-type"
-        try:
-            connect_button_element = self.driver.find_element(By.CSS_SELECTOR, css_path_add_note)
-            connect_button_element.click()
-        except Exception as e:
-            print(f"Error: {e}")
-            return False
-        time.sleep(5)
-        # Add custom message to the connection request
-        css_path_text_area = "html > body > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:first-of-type > textarea"
-        try:
-            text_area_element = self.driver.find_element(By.CSS_SELECTOR, css_path_text_area)
-            text_area_element.send_keys(message)
-        except Exception as e:
-            print(f"Error: {e}")
-            return False
-        
-        time.sleep(5)
-        # Send the connection request   
-        css_path_send_message =   "html > body > div:nth-of-type(3) > div > div > div:nth-of-type(4) > button:nth-of-type(2)"
-        try:
-            send_button_element = self.driver.find_element(By.CSS_SELECTOR, css_path_send_message)
-            print(send_button_element.text)
-            # send_button_element.click()
-
-        except Exception as e:
-            print(f"Error: {e}")
-            return False
-        time.sleep(5)
+            except Exception as e:
+                print(f"Error: {e}")
+                return False
+            time.sleep(5)
 
         print("Done message request!")
         return True
@@ -402,8 +411,8 @@ class LinkedInScraper:
 def main():
     scraper = LinkedInScraper()
     
-    username = "stanlee321@gmail.com"
-    password = "2.002319304Momm"
+    username = "s.com"
+    password = "hom"
         
     # Example usage
     geo_urns = ["104379274"]
@@ -416,20 +425,27 @@ def main():
     page_end = 4
 
     scraper.run(username, password, keywords, page_start, page_end)
-    kwargs = {
-        page_start: page_start,
-        page_end: page_end,
-        geo_urns: geo_urns,
-        industries: industries,
-        keywords: keywords,
-        profile_language: profile_language,
-        sid: sid 
+    
+    # kwargs = {
+    #     page_start: page_start,
+    #     page_end: page_end,
+    #     geo_urns: geo_urns,
+    #     industries: industries,
+    #     keywords: keywords,
+    #     profile_language: profile_language,
+    #     sid: sid 
+    # }
+    
+    # scraper.search_and_extract(**kwargs, debug=True)
+    profile_url = "https://www.linkedin.com/in/fernando-terrazas-79abab5/" # profile['profile_url']
+
+    message_data = {
+        'profile_url': profile_url,
+        'message': 'Hello, this is a test connection request.',
+        'send_without_note': True,
     }
-    
-    scraper.search_and_extract(**kwargs, debug=True)
-    
 
-
+    scraper.send_connection_request(**message_data)
     time.sleep(20)
     scraper.driver.quit()
     
