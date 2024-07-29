@@ -19,7 +19,7 @@ import logging
 LOGGER.setLevel(logging.WARNING)
 
 # from libs.settings import CONFIG
-from utils import (load_data_from_json,
+from libs.utils import (load_data_from_json,
                    save_data_to_json, 
                    add_cookies, 
                    add_local_storage, 
