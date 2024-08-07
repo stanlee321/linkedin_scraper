@@ -84,6 +84,8 @@ class ScraperHandler:
             
             for profile in data['data']:
                 clean_data = transform_data(profile, page, search_url)
+                
+                # print("Payload: ", clean_data)
                 # Send to API
                 try:
                     res = await make_post_request(url=self.api_url + "/v1/profile", data=clean_data, headers=None)
