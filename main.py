@@ -13,8 +13,8 @@ class Config:
     def __init__(self):
         self.bootstrap_servers = json.loads(Environment.get_string("BOOTSTRAP_SERVERS", '["192.168.1.12:9093"]'))
         self.topics = json.loads(Environment.get_string("TOPICS", '["SEARCH", "MESSAGE"]'))
-        self.username = Environment.get_string("USERNAME", "stanlee321@gmail.com")
-        self.password = Environment.get_string("PASSWORD", "hohjIh-tyzqy3-padkym")
+        self.username = Environment.get_string("USERNAME", "XXXX")
+        self.password = Environment.get_string("PASSWORD", "XXXX")
         self.api_url = Environment.get_string("API_URL", "http://localhost:8000")
         self.debug = Environment.get_string("DEBUG", "0")
         self.headless = Environment.get_string("HEADLESS", "0")
