@@ -19,7 +19,7 @@ class ScraperHandler:
                  topic_data: str, 
                  bootstrap_servers: List[str],
                  api_url: str,
-                 debug: bool = True,
+                 debug: bool = False,
                  scraper: LinkedInScraper = None
                  ):
 
@@ -50,7 +50,7 @@ class ScraperHandler:
             self.topic_data,
             bootstrap_servers=self.bootstrap_servers,
             group_id=self.group_id,
-            auto_offset_reset='earliest'
+            auto_offset_reset='latest'
         )
         return consumer
 
@@ -155,6 +155,8 @@ class ScraperHandler:
                     profile_url = data['profile_url']
                     message = data['message']
                     send_without_note = data.get('send_without_note', False)
+                    if message == "":
+                        send_without_note = True
                     
                     connection_request_status = self.lkdn_handler.send_connection_request(
                         profile_url, message, send_without_note )

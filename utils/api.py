@@ -14,7 +14,11 @@ async def make_post_request(url, data, headers=None):
         httpx.Response: The response object from the POST request.
     """
     if headers is None:
-        headers = {}
+        
+        headers = {
+            'accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
     
     async with httpx.AsyncClient() as client:
         try:
@@ -38,7 +42,10 @@ async def make_put_request(url, data, headers=None):
         httpx.Response: The response object from the PUT request.
     """
     if headers is None:
-        headers = {}
+        headers = {
+            'accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
     
     async with httpx.AsyncClient() as client:
         try:

@@ -13,9 +13,9 @@ class Config:
     def __init__(self):
         self.bootstrap_servers = json.loads(Environment.get_string("BOOTSTRAP_SERVERS", '["192.168.1.12:9093"]'))
         self.topics = json.loads(Environment.get_string("TOPICS", '["SEARCH", "MESSAGE"]'))
-        self.username = Environment.get_string("USERNAME", "a@gmail.com")
-        self.password = Environment.get_string("PASSWORD", "!!!")
-        self.api_url = Environment.get_string("API_URL", "http://localhost:5000")
+        self.username = Environment.get_string("USERNAME", "stanlee321@gmail.com")
+        self.password = Environment.get_string("PASSWORD", "hohjIh-tyzqy3-padkym")
+        self.api_url = Environment.get_string("API_URL", "http://localhost:8000")
         self.debug = Environment.get_string("DEBUG", "0")
         self.headless = Environment.get_string("HEADLESS", "0")
     
@@ -44,7 +44,8 @@ async def main():
     # Parse topics string to list
     topics = config.topics
     bootstrap_servers = config.bootstrap_servers
-
+    debug =  True if config.debug == "1" else False
+    
     print(f"Topics: {topics}")
     print(f"Bootstrap servers: {bootstrap_servers}")
     
@@ -55,14 +56,13 @@ async def main():
                            password=config.password)
 
     
-
     # Create two instances of ScraperHandler
     scraper_handler1 = ScraperHandler(
         topic_query=topics[0],
         topic_data=topics[0],
         bootstrap_servers = bootstrap_servers,
         api_url=config.api_url,
-        debug=config.debug,
+        debug=debug,
         scraper = linkedin_scraper
     )
 
@@ -71,7 +71,7 @@ async def main():
         topic_data=topics[1],
         bootstrap_servers = bootstrap_servers,
         api_url= config.api_url,
-        debug = config.debug,
+        debug = debug,
         scraper = linkedin_scraper
     )
     
